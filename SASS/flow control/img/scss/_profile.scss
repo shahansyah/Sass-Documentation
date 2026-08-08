@@ -1,0 +1,10 @@
+@mixin profile-pic($size, $circle: false) {
+  width: $size;
+  height: $size;
+  border: 2px solid white;
+  box-shadow: 1px 1px 3px rgba(#000, 0.3); // Menggunakan rgba yang benar
+
+  @if $circle {
+    border-radius: 50%;
+  }
+}

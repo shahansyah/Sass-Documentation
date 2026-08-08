@@ -1,0 +1,52 @@
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.header ul li {
+  display: inline-block;
+}
+.header ul li {
+  background-color: black;
+  padding: 1em;
+}
+.header ul li a {
+  color: antiquewhite;
+}
+
+.footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer ul li {
+  display: inline-block;
+}
+.footer ul li {
+  background-color: red;
+  padding: 1em;
+}
+
+.footer {
+  padding: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  width: 550px;
+  height: 550px;
+  background-color: gray;
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 60px;
+  background-color: green;
+}
+
+/*# sourceMappingURL=main.css.map */

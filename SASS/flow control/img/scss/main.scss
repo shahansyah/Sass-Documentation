@@ -1,0 +1,72 @@
+@use "profile" as *;
+@use "color" as *;
+@use "triangle" as *;
+@use "mixin" as *;
+
+body {
+  background-color: black;
+  min-height: 1000px;
+}
+
+.square-profile {
+  @include profile-pic(200px, $circle: false);
+}
+
+.circle-profile {
+  @include profile-pic(200px, $circle: true);
+}
+
+.nav {
+  @include color-mode($light-mode: false);
+}
+
+// bagian yang sefitiga
+
+// Di file main.scss
+.right {
+  @include triangle(50px, red, up);
+}
+.left {
+  @include triangle(50px, rgb(30, 0, 255), left);
+}
+.top {
+  @include triangle(50px, red, right);
+}
+.bottom {
+  @include triangle(50px, rgb(0, 34, 255), down);
+}
+// bagian kolom warna gradasi
+
+.gradiant {
+  @include generate-gradient-list(red, "darken");
+}
+
+.gradiant1 {
+  @include generate-gradient-list(blue, "lighten");
+}
+
+// each
+// defisi warna masing masing/value
+$social-colors: (
+  youtube: #f50202,
+  facebook: #0e23e6,
+  instagram: #c8ec13,
+  twitter: #00ef78,
+  twitch: #da06f6,
+);
+
+.socials {
+  font-size: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+
+  // disalam each nya ada (key) sama (value)
+  @each $socials /*ini key $socials*/,
+    $color /*ini value color*/ in $social-colors
+  {
+    // untuk setiap kelas (social) interpolasi var{$socials}
+    .#{$socials} {
+      color: $color; /*yang berisi mengambil nilai valuenya $color*/
+    }
+  }
+}

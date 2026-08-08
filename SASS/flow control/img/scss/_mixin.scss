@@ -1,0 +1,22 @@
+// 1. Panggil modul warna bawaan Sass di baris paling atas
+@use "sass:color";
+
+@mixin generate-gradient-list($base-color, $mode: "darken") {
+  margin: 0;
+  padding: 0;
+  color: white;
+  list-style: none;
+
+  @for $i from 1 to 11 {
+    li:nth-child(#{$i}) {
+      padding: 4px;
+
+      // 2. Gunakan color.adjust() untuk menggantikan lighten dan darken
+      @if $mode == "lighten" {
+        background-color: color.adjust($base-color, $lightness: $i * 3%);
+      } @else {
+        background-color: color.adjust($base-color, $lightness: -$i * 3%);
+      }
+    }
+  }
+}

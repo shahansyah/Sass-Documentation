@@ -1,0 +1,16 @@
+// 1. Deklarasikan semua variabel di sini
+$light-bg: #eaeaea;
+$light-text: #333333;
+$dark-bg: #999999;
+$dark-text: #dddddd;
+
+// 2. Mixin untuk berganti mode warna
+@mixin color-mode($light-mode: true) {
+  @if $light-mode {
+    background-color: $light-bg;
+    color: $light-text;
+  } @else {
+    background-color: $dark-bg;
+    color: $dark-text;
+  }
+}

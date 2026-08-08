@@ -1,0 +1,38 @@
+// @import "modules/mixin";
+// @import "modules/header";
+// @import "modules/footer";
+// @import "modules/container";
+
+// @mixin
+
+// Definition: A feature for creating reusable blocks of CSS code
+// that can be used in various places.
+
+// Purpose: To avoid writing repetitive code.
+// Mixins can accept arguments or parameters, allowing their CSS values to be dynamic.
+
+@use "modules/header";
+@use "modules/footer";
+@use "modules/container";
+
+// @import
+// Definition: The old way in Sass to include other SCSS files into a
+// single main file.
+// Usage: Splitting code into multiple files(partials,)
+// to keep the folder structure more organized.
+
+// Drawbacks: All variables and mixins from the imported files become global,
+//   making them prone to name collisions,
+//   and this method is now considered deprecated.;
+
+// @use
+// Definition: A modern alternative to @import for loading modules, variables,
+//   functions,
+//   and mixins from other SCSS files.
+// Purpose: Safely combines files by using anamespace system
+//     (module names,)
+// Advantages: Prevents variable/mixin name conflicts and loads files only
+//      (once saving on compilation time,).;
+
+// note: @import is deprecated and is being phased out because it causes messy
+//   dependency chains (global namespace conflicts) and slows down compilation.;

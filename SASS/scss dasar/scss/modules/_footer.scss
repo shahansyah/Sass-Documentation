@@ -1,0 +1,13 @@
+@use 'mixin';
+
+.footer ul {
+  @include mixin.inline-list();
+  li {
+    background-color: red;
+
+    padding: 1em;
+  }
+}
+.footer{
+  padding:5px;
+}
