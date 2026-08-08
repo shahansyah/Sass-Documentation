@@ -68,6 +68,16 @@ Inherits all attributes from one selector to another without having to rewrite t
 6. Functions & Control Directives (Functions, Conditions, Loops)
 Sass supports programming logic such as creating custom functions, conditional statements (@if, @else), and loops (@for, @each).
 
+📌 NOTE: 
+@use vs @import in Sass
+
+❌ Do not use @import (Deprecated): It makes all variables global (prone to overlap/conflicts) and leads to CSS code duplication.
+
+✅ Use @use (Modern Standard):
+ Built-in namespace: Prevents variable name conflicts (colors.$primary).
+ Imported only once: Saves file size; no duplicated CSS.
+Supports Private Variables: Use the underscore prefix $_name so variables cannot be accessed from outside the file.
+
 📚 Licenses & Contributions
 This project is open to everyone. Feel free to fork it, submit a pull request, or provide feedback via the issues tab.
 
